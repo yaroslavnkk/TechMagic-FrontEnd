@@ -12,20 +12,18 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-
-  img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .header-name {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
+}
+.header-name {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
+img {
+  width: 50px;
+  height: 50px;
+}
 @media (max-width: 600px) {
-  .clinic-name {
+  .header-name {
     font-size: 1.2rem;
   }
 

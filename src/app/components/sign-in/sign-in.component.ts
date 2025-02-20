@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../shared/header/header.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -17,7 +19,13 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule, MatCardModule, CommonModule],
+    ReactiveFormsModule,
+    MatCardModule,
+    CommonModule,
+    HeaderComponent,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive],
 })
 
 export class SignInComponent {
