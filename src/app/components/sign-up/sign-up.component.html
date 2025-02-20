@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="sign-up-container">
+    <mat-card class="sign-up-card">
+      <h2>Sign Up</h2>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" formControlName="firstName" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Middle Name</mat-label>
+            <input matInput type="text" formControlName="middleName" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" formControlName="lastName" />
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Birth Date</mat-label>
+          <input matInput type="date" formControlName="birthDate" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" />
+          </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password"  />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="signUpForm.invalid">
+          Sign In
+        </button>
+      </form>
+    </mat-card>
+  </div>
+  <router-outlet />

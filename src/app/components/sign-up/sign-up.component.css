@@ -1,0 +1,31 @@
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F1E3D3;
+  }
+  h2{
+    color: white;
+  }
+  
+  .sign-up-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+    background-color: #690B22;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+
+  @media (max-width: 480px) {
+    .sign-in-card {
+      padding: 1.5rem;
+    }
+  }
+  
