@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
     });
 
   }
-  constructor(private fb : FormBuilder, private authService : AuthService){}
+  constructor(private fb : FormBuilder, private authService : AuthService, private router : Router){}
 
   onSubmit(){
     if(this.signUpForm.valid){
@@ -46,14 +46,10 @@ export class SignUpComponent implements OnInit {
        this.signUpForm.value.birthDate,
        this.signUpForm.value.email,
        this.signUpForm.value.password
-      ).subscribe(
-        data => {
-          console.log(data)
-        },
-        error => {
-          console.log(error)
-        }
-      );
+      ).subscribe({
+        next : () => this.router.navigate(['/login']),
+        error : (err) => console.error('Registration failed: ', err)
+      });
     }
     }
 
