@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from '../shared/header/header.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -19,7 +19,7 @@ import { AuthService } from '../../services/auth/auth.service';
       HeaderComponent,
       MatButtonModule,
       MatCardModule,
-      RouterOutlet],
+      RouterModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })

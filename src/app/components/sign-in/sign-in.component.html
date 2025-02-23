@@ -13,10 +13,10 @@
           <input matInput type="password" formControlName="password"  />
         </mat-form-field>
   
-        <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="signInForm.invalid">
+        <button mat-raised-button color="primary" class="full-width sign-in-button" type="submit" [disabled]="signInForm.invalid">
           Sign In
         </button>
-        <h2>{{message}}</h2>
+        <a mat-button routerLink = '/register' routerLinkActive="active">Don't have account? Register</a>
       </form>
     </mat-card>
   </div>

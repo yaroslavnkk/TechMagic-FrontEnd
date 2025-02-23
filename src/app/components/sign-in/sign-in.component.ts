@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 
 
@@ -24,7 +24,7 @@ import { AuthService } from '../../services/auth/auth.service';
     MatCardModule,
     CommonModule,
     HeaderComponent,
-    RouterOutlet],
+    RouterModule],
 })
 
 export class SignInComponent implements OnInit {
