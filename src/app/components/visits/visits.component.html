@@ -1,2 +1,9 @@
 <app-header></app-header>
+
+<h2>Візити:</h2>
+<hr>
+<ng-container *ngIf="getVisits()">
+    <p>No visits yet</p>
+</ng-container>
+
 <router-outlet></router-outlet>
