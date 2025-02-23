@@ -1,2 +1,55 @@
 <app-header></app-header>
+<div class="profile-container" *ngIf="currentUser">
+    <mat-card class="profile-card">
+      <mat-card-header>
+        <div mat-card-avatar class="profile-image">
+          <img src="../../../assets/profile-photo.jpg" alt="Profile picture">
+        </div>
+        <mat-card-title>{{currentUser.userFirstName}} {{currentUser.userLastName}}</mat-card-title>
+        <mat-card-subtitle>Профіль користувача</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <mat-icon matListItemIcon>person</mat-icon>
+            <div matListItemTitle>Ім'я</div>
+            <div matListItemLine>{{currentUser.userFirstName}}</div>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>person_outline</mat-icon>
+            <div matListItemTitle>По батькові</div>
+            <div matListItemLine>{{currentUser.userMiddleName}}</div>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>person</mat-icon>
+            <div matListItemTitle>Прізвище</div>
+            <div matListItemLine>{{currentUser.userLastName}}</div>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>cake</mat-icon>
+            <div matListItemTitle>Дата народження</div>
+            <div matListItemLine>{{currentUser.userBirthDate | date:'dd.MM.yyyy'}}</div>
+          </mat-list-item>
+
+          <mat-divider></mat-divider>
+
+          <mat-list-item>
+            <mat-icon matListItemIcon>email</mat-icon>
+            <div matListItemTitle>Email</div>
+            <div matListItemLine>{{currentUser.email}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
 <router-outlet></router-outlet>

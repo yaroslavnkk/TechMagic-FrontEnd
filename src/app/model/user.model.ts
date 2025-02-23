@@ -1,8 +1,8 @@
 export interface User{
-    firstName? : string;
-    middleName? : string;
-    lastName? : string;
-    birthDate? : Date;
+    userFirstName : string;
+    userMiddleName : string;
+    userLastName : string;
+    userBirthDate : Date;
     email : string;
     password? : string;
 
