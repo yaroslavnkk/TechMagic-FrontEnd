@@ -1,0 +1,29 @@
+.visits-container {
+    padding: 20px;
+    background-color: #F1E3D3;
+    height: 100vh;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+
+  
+  table {
+    width: 100%;
+    background-color: #515151;
+  }
+  
+  ::ng-deep.mat-cell, .mat-header-cell {
+    padding: 8px 16px;
+  }
+  
+  ::ng-deep.mat-column-actions {
+    width: 120px;
+  }
+  
+  ::ng-deep.mat-elevation-z8 {
+    margin-top: 20px;
+  }

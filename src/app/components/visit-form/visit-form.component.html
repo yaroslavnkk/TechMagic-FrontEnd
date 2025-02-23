@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="container">
+    <div class="form-container">
+        <h2>Створити новий запис</h2>
+      
+        <form [formGroup]="visitForm" (ngSubmit)="onSubmit()" class="visit-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Оберіть лікаря</mat-label>
+            <mat-select appearence="outline" formControlName="doctor">
+                <mat-option *ngFor="let doctor of doctors" [value]="doctor._id">{{doctor.firstName}} {{doctor.patronymic}} {{doctor.lastName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+      
+          <mat-form-field appearance="fill">
+            <mat-label>Введіть діагноз</mat-label>
+            <textarea matInput formControlName="diagnosis" required></textarea>
+          </mat-form-field>
+      
+          <div class="cost-section">
+            <h3>Ціни</h3>
+            <div class="cost-section-inputs">
+                <mat-form-field appearance="fill">
+                    <mat-label>Вартість процедур</mat-label>
+                    <input matInput type="number" formControlName="proceduresCost" min="0">
+                    <mat-error *ngIf="visitForm.get('proceduresCost')?.hasError('min')">
+                      Ціна не може бути від'ємною
+                    </mat-error>
+                  </mat-form-field>
+            
+                  <mat-form-field appearance="fill">
+                    <mat-label>Вартість препаратів</mat-label>
+                    <input matInput type="number" formControlName="medicationsCost" min="0">
+                    <mat-error *ngIf="visitForm.get('medicationsCost')?.hasError('min')">
+                      Ціна не може бути від'ємною
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+      
+            <mat-checkbox formControlName="specialistConsultation">
+              Включити консультацію зі спеціалістом (+$50)
+            </mat-checkbox>
+      
+            <mat-form-field appearance="fill">
+              <mat-label>Категорія знижки</mat-label>
+              <mat-select formControlName="discountCategory">
+                <mat-option *ngFor="let category of discountCategories" [value]="category.name">
+                  {{category.name}} ({{category.discount}}% off)
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+      
+          <div class="cost-summary">
+            <p>Вартість лікування: {{calculateTreatmentCost() | currency}}</p>
+            <p>Фінальна ціна(після врахування знижок): {{calculateFinalCost() | currency}}</p>
+          </div>
+      
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!visitForm.valid">
+              Створити запис
+            </button>
+            <button mat-button type="button" (click)="visitForm.reset()">
+              Скинути
+            </button>
+          </div>
+        </form>
+      </div>
+</div>
+
+<router-outlet></router-outlet>

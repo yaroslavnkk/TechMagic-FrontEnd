@@ -2,9 +2,6 @@
   background-color: #F1E3D3;
   height:100dvh;
 }
-.toolbar-spacer {
-  flex: 1 1 auto;
-}
 
 .content-container {
   padding: 20px;
@@ -16,6 +13,7 @@
   margin-bottom: 20px;
   text-align: center;
   color: white;
+  background-color: #515151;
 }
 
 .doctors-section {
@@ -32,6 +30,7 @@
 .doctor-card {
   height: 100%;
   color : white;
+  background-color: #515151;
 }
 
 .mat-card-actions {

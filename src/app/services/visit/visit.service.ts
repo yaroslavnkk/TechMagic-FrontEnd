@@ -25,7 +25,7 @@ export class VisitService {
   }
 
   createVisit(doctor : string, user : string, date : Date, diagnosis : string, treatmentCost : number, finalCost : number) : Observable<Visit>{
-    return this.http.post<Visit>(`${this.baseUrl}/visits`, {doctor,user,date,diagnosis,treatmentCost,finalCost}).pipe(
+    return this.http.post<Visit>(`${this.baseUrl}/visit`, {doctor,user,date,diagnosis,treatmentCost,finalCost}).pipe(
       catchError(this.handleError)
     );
   }
@@ -37,7 +37,7 @@ export class VisitService {
   }
 
   updateVisit(id : string, updatedVisit : Visit) : Observable<Visit>{
-    return this.http.patch<Visit>(`${this.baseUrl}/visit/${id}`, {updatedVisit}).pipe(
+    return this.http.put<Visit>(`${this.baseUrl}/visit/${id}`, updatedVisit).pipe(
       catchError(this.handleError)
     );
   }

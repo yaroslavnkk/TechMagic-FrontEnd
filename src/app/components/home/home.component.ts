@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   imports: [HeaderComponent, CommonModule,
@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
 export class HomeComponent implements OnInit {
   doctors: Doctor[] = [];
 
-  constructor(private doctorService: DoctorService, private authService : AuthService) {}
+  constructor(private doctorService: DoctorService, private authService : AuthService, private router : Router) {}
 
   ngOnInit() {
     this.loadDoctors();
@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
       (doctors: Doctor[]) => this.doctors = doctors,
       (error: unknown) => console.error('Помилка завантаження лікарів:', error)
     );
+  }
+
+  onNavigate(){
+    this.router.navigate(['/visit-form']);
   }
 
   logout() {

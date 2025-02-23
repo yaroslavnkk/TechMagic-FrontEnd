@@ -1,0 +1,75 @@
+.container{
+    height: 105vh;
+    background-color: #F1E3D3;
+}
+.form-container {
+  max-width: 600px;
+  margin : auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+::ng-deep .mat-mdc-checkbox .mat-internal-form-field{
+    color: black !important;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+.visit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cost-section {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.cost-section h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.cost-section-inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.cost-summary {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e3f2fd;
+  border-radius: 12px;
+  color: #0d47a1;
+  font-weight: bold;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+button[type="submit"] {
+  background-color: #1976d2;
+  color: white;
+}
+
+button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
