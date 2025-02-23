@@ -11,6 +11,7 @@ export class AuthService {
   private readonly baseURL = 'http://localhost:4000';
   private token = 'authToken';
   private currentUserSubject = new BehaviorSubject<User | null>(null);
+  private isLoggedIn = false;
 
   constructor(private http : HttpClient, private router : Router) {
       
@@ -36,14 +37,20 @@ export class AuthService {
         localStorage.setItem('currentUser', JSON.stringify(response.user));
         this.currentUserSubject.next(response.user);
         this.router.navigate(['/home'])
+        this.isLoggedIn = true;
       })
     )
     };
+
+    isAuthenticated() : boolean{
+      return this.isLoggedIn || !!localStorage.getItem(this.token);
+    }
 
     logout() : void{
         localStorage.removeItem(this.token);
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
         this.router.navigate(['/login']);
+        this.isLoggedIn = false;
     }
 }

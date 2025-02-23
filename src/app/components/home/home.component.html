@@ -1,1 +1,34 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="container">
+  <div class="content-container">
+  
+    <div class="doctors-section">
+      <h2 class="mat-h2">Наші спеціалісти</h2>
+      
+      <div class="doctors-grid">
+        <mat-card class="doctor-card" *ngFor="let doctor of doctors">
+          <mat-card-header>
+            <mat-card-title>
+              {{doctor.lastName}} {{doctor.firstName}} {{doctor.patronymic}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{doctor.specialty}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          
+          <mat-card-content>
+            <p>Категорія: {{doctor.qualification}}</p>
+          </mat-card-content>
+          
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary">
+              <mat-icon>event</mat-icon>
+              Записатися
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

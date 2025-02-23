@@ -3,6 +3,21 @@
     <div class="header-logo">
       <img src="assets/clinic-icon.png" alt="Clinic Logo" />
       <span class="header-name">MedCare</span>
+      <ng-container *ngIf="authService.isAuthenticated()">
+        <span class="toolbar-spacer"></span>
+        <a mat-button routerLink="/profile" routerLinkActive="active">
+          <mat-icon>account_circle</mat-icon>
+          Мій профіль
+        </a>
+        <a mat-button routerLink="/visits" routerLinkActive="active">
+          <mat-icon>event</mat-icon>
+          Мої записи
+        </a>
+        <button mat-button (click)="authService.logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Вийти
+        </button>
+    </ng-container>
     </div>
   </mat-toolbar>
 </header>
